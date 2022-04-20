@@ -1,0 +1,53 @@
+{
+  "name": "react-template",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "start": "react-app-rewired start",
+    "dev": "set BROWSER=none&& react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject",
+    "lint:eslint": "eslint \"**/*.js\" --fix",
+    "lint:stylelint": "stylelint \"**/*.{css,less,scss}\" --fix"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie <= 8",
+    "chrome >= 14",
+    "safari >= 3",
+    "ios >= 8",
+    "android >= 4.0"
+  ],
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.3",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.26.1",
+    "classnames": "^2.3.1",
+    "normalize.css": "^8.0.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.2.2",
+    "react-scripts": "5.0.0",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "customize-cra": "^1.0.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-react": "^7.29.4",
+    "http-proxy-middleware": "^2.0.4",
+    "node-sass": "npm:dart-sass@^1.25.0",
+    "react-app-rewired": "^2.2.1",
+    "sass-resources-loader": "^2.2.4",
+    "stylelint": "^14.6.1",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "unplugin-auto-import": "^0.7.1",
+    "unplugin-vue-components": "^0.19.3"
+  }
+}
