@@ -4,13 +4,12 @@
  * @Author: hzf
  * @Date: 2022-03-30 11:59:23
  * @LastEditors: hzf
- * @LastEditTime: 2022-04-20 11:44:55
+ * @LastEditTime: 2022-04-21 18:19:41
  */
 // import AutoImport from 'unplugin-auto-import/webpack';
 
 const path = require('path'),
   AutoImport = require('unplugin-auto-import/webpack'),
-  Components = require('unplugin-vue-components/webpack'),
   { override, addWebpackAlias, adjustStyleLoaders } = require('customize-cra'),
   resolve = dir => path.resolve(__dirname, dir);
 
@@ -47,10 +46,6 @@ module.exports = override(
             }
           },
         ],
-      }),
-      Components({
-        dirs: [],
-        extensions: ['jsx'],
       }),
     ];
     return config;

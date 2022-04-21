@@ -4,7 +4,7 @@
  * @Author: hzf
  * @Date: 2022-03-29 17:18:52
  * @LastEditors: hzf
- * @LastEditTime: 2022-04-19 10:05:39
+ * @LastEditTime: 2022-04-21 17:59:25
  */
 module.exports = {
   root: true,
@@ -29,9 +29,14 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
+    'html',
     'react'
   ],
   globals: {
+  },
+  settings: {
+    'html/indent': '+2',
+    'html/report-bad-indent': 'error',
   },
   rules: {
     indent: ['error', 2, { // js 代码缩进

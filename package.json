@@ -8,8 +8,8 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject",
-    "lint:eslint": "eslint \"**/*.js\" --fix",
-    "lint:stylelint": "stylelint \"**/*.{css,less,scss}\" --fix"
+    "lint:js": "eslint \"**/*.{js,html}\" --fix",
+    "lint:css": "stylelint \"**/*.{css,less,scss,html}\" --fix"
   },
   "browserslist": [
     "> 1%",
@@ -38,16 +38,17 @@
     "babel-eslint": "^10.1.0",
     "customize-cra": "^1.0.0",
     "eslint": "^6.7.2",
+    "eslint-plugin-html": "^6.2.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-react": "^7.29.4",
     "http-proxy-middleware": "^2.0.4",
     "node-sass": "npm:dart-sass@^1.25.0",
+    "postcss-html": "^1.4.1",
     "react-app-rewired": "^2.2.1",
     "sass-resources-loader": "^2.2.4",
     "stylelint": "^14.6.1",
     "stylelint-config-recess-order": "^3.0.0",
     "stylelint-config-standard-scss": "^3.0.0",
-    "unplugin-auto-import": "^0.7.1",
-    "unplugin-vue-components": "^0.19.3"
+    "unplugin-auto-import": "^0.7.1"
   }
 }

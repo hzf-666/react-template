@@ -4,10 +4,10 @@
  * @Author: hzf
  * @Date: 2022-04-02 17:18:09
  * @LastEditors: hzf
- * @LastEditTime: 2022-04-18 10:45:03
+ * @LastEditTime: 2022-04-21 20:24:51
  */
 export function typeOf(target) {
-  const toString = Object.prototype.toString,
+  const getProtoStr = Object.prototype.toString,
     map = {
       '[object Boolean]': 'boolean',
       '[object Number]': 'number',
@@ -20,7 +20,7 @@ export function typeOf(target) {
       '[object Null]': 'null',
       '[object Object]': 'object'
     };
-  return map[toString.call(target)];
+  return map[getProtoStr.call(target)];
 }
 
 export function deepCopy(target) {

@@ -4,11 +4,17 @@
  * @Author: hzf
  * @Date: 2022-03-29 13:43:53
  * @LastEditors: hzf
- * @LastEditTime: 2022-04-07 19:31:18
+ * @LastEditTime: 2022-04-21 18:18:54
  */
 module.exports = {
   extends: ['stylelint-config-standard-scss', 'stylelint-config-recess-order'],
   plugins: [],
+  overrides: [
+    {
+      files: ['**/*.html'],
+      customSyntax: 'postcss-html'
+    },
+  ],
   rules: {
     'selector-class-pattern': [
       '^([a-z][a-z0-9]*)((-|_)+[a-z0-9]+)*$',
