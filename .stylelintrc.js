@@ -4,7 +4,7 @@
  * @Author: hzf
  * @Date: 2022-03-29 13:43:53
  * @LastEditors: hzf
- * @LastEditTime: 2022-04-21 18:18:54
+ * @LastEditTime: 2022-04-25 21:55:33
  */
 module.exports = {
   extends: ['stylelint-config-standard-scss', 'stylelint-config-recess-order'],
@@ -37,5 +37,8 @@ module.exports = {
     'no-empty-source': null,
     'scss/at-import-partial-extension': null,
     'no-descending-specificity': null,
+    'selector-pseudo-class-no-unknown': [true, {
+      ignorePseudoClasses: ['export'],
+    }],
   }
 };

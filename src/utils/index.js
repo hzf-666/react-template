@@ -4,7 +4,7 @@
  * @Author: hzf
  * @Date: 2022-04-02 17:18:09
  * @LastEditors: hzf
- * @LastEditTime: 2022-04-21 20:24:51
+ * @LastEditTime: 2022-04-25 19:56:58
  */
 export function typeOf(target) {
   const getProtoStr = Object.prototype.toString,
@@ -98,4 +98,9 @@ export function dataURL2File(dataurl, filename = 'file') {
   const blob = new Blob([u8arr], { type });
 
   return new File([blob], filename, { lastModified: Date.now(), type });
+}
+
+export function isPC() {
+  const sUserAgent = navigator.userAgent.toLowerCase();
+  return !(/ipad|iphone|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/.test(sUserAgent));
 }

@@ -4,19 +4,21 @@
  * @Author: hzf
  * @Date: 2022-03-29 11:39:39
  * @LastEditors: hzf
- * @LastEditTime: 2022-04-20 11:37:43
+ * @LastEditTime: 2022-04-25 22:04:09
  */
 import { createRoot } from 'react-dom/client';
 import Router from './router';
 import reportWebVitals from './reportWebVitals';
 import 'normalize.css';
 import './scss/index.scss';
+import sassExport from './scss/export.module.scss';
 
 function setDomStyle() {
-  const width = document.documentElement.clientWidth,
-    height = document.documentElement.clientHeight;
-  document.documentElement.style.setProperty('--app-height', `${ height }px`);
-  document.documentElement.style.fontSize = width * 100 / 750 + 'px';
+  const standardWidth = 750,
+    maxMobileWidth = 960,
+    scale = Number(sassExport.scale),
+    width = document.documentElement.clientWidth;
+  document.documentElement.style.fontSize = width > maxMobileWidth ? `${ scale / 2 }px` : (width * scale / standardWidth + 'px');
 }
 setDomStyle();
 window.addEventListener('resize', setDomStyle);

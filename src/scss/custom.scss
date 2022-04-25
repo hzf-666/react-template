@@ -3,13 +3,18 @@
   font-family: Arial, "Microsoft YaHei", sans-serif;
 }
 
-body {
-  font-size: $fontSize;
-  color: $colorText;
+html {
+  height: 100%;
+
+  body {
+    height: 100%;
+    font-size: $fontSize;
+    color: $colorText;
+  }
 
   #root {
     position: relative;
-    height: var(--app-height);
+    height: 100%;
   }
 }
 
