@@ -4,11 +4,12 @@
  * @Author: hzf
  * @Date: 2022-03-30 11:59:23
  * @LastEditors: hzf
- * @LastEditTime: 2022-04-25 22:16:28
- */
+ * @LastEditTime: 2022-04-26 18:28:16
+*/
 const path = require('path'),
   AutoImport = require('unplugin-auto-import/webpack'),
   { override, addWebpackAlias, adjustStyleLoaders } = require('customize-cra'),
+  globalData = require('./src/global/data.js'),
   resolve = dir => path.resolve(__dirname, dir);
 
 const dev = process.env.NODE_ENV === 'development';
@@ -27,20 +28,17 @@ module.exports = override(
       AutoImport({
         imports: ['react', 'react-router', {
           'prop-types': ['PropTypes'],
+          react: ['createContext'],
         }],
         resolvers: [
           name => {
-            switch (name) {
-              case '$g':
-                return '@/global/data.js';
-              case '$http':
-                return '@/http/index.js';
-              case 'React':
-                return 'react';
-              case 'ReactDOM':
-                return 'react-dom';
-              case 'classnames':
-                return 'classnames';
+            for (const _name of globalData) {
+              if (name === '$' + _name) {
+                return {
+                  from: '@/global',
+                  name: _name,
+                };
+              }
             }
           },
         ],

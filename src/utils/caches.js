@@ -4,9 +4,9 @@
  * @Author: hzf
  * @Date: 2022-04-08 11:20:39
  * @LastEditors: hzf
- * @LastEditTime: 2022-04-08 11:20:39
+ * @LastEditTime: 2022-04-26 10:14:33
  */
-export default function(type) {
+export default function(type = 'local') {
   if (type === 'session') {
     return {
       get(key) {

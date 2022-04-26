@@ -4,14 +4,15 @@
  * @Author: hzf
  * @Date: 2022-04-11 14:51:49
  * @LastEditors: hzf
- * @LastEditTime: 2022-04-20 19:34:17
+ * @LastEditTime: 2022-04-26 20:36:34
  */
 import './scss/index.scss';
 import { getCaptcha } from '@/api';
 
 function Login() {
   const navigate = useNavigate();
-  const [loadingCaptcha, toGetCaptcha] = $g.useApiLoading(getCaptcha);
+  const [loadingCaptcha, toGetCaptcha] = $useApiLoading(getCaptcha);
+  const store = $useStore(), count = store.get('count');
 
   useEffect(() => {
     (async function() {
@@ -33,14 +34,16 @@ function Login() {
     // });
   }, []);
 
-  $g.useUpdated(() => {
+  $useUpdated(() => {
     console.log('页面渲染更新');
   });
   return (
     <>
       {String(loadingCaptcha)}
+      {count}
       <div>登录页面</div>
       <button onClick={() => navigate('/home')}>登录</button>
+      <button onClick={() => store.set('count', count + 1)}>计数</button>
     </>
   );
 }

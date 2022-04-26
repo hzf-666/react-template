@@ -4,7 +4,7 @@
  * @Author: hzf
  * @Date: 2022-04-08 11:17:04
  * @LastEditors: hzf
- * @LastEditTime: 2022-04-20 19:31:59
+ * @LastEditTime: 2022-04-26 14:56:09
  */
 import axios from 'axios';
 import interceptor from './interceptor.js';
@@ -22,7 +22,7 @@ async function request(method, url, options = {}) {
     timeout: 20000,
     ...options,
   };
-  const _options = $g.deepCopy(options);
+  const _options = $deepCopy(options);
 
   ['showTip', 'successTip', 'failTip'].forEach(k => {
     delete _options[k];
