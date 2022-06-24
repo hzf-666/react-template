@@ -4,7 +4,7 @@
  * @Author: hzf
  * @Date: 2022-03-29 17:18:52
  * @LastEditors: hzf
- * @LastEditTime: 2022-04-21 17:59:25
+ * @LastEditTime: 2022-06-24 14:53:03
  */
 module.exports = {
   root: true,
@@ -151,5 +151,6 @@ module.exports = {
       objectsInObjects: false,
     }],
     'array-bracket-spacing': ['error', 'never'], // 在数组括号内强制实现一致的间距
+    'require-atomic-updates': 'off', // await 不允许由于使用or而导致竞争条件的分配 yield
   }
 };

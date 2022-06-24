@@ -4,7 +4,7 @@
  * @Author: hzf
  * @Date: 2022-04-26 18:04:26
  * @LastEditors: hzf
- * @LastEditTime: 2022-04-28 09:29:36
+ * @LastEditTime: 2022-06-24 14:45:07
  */
 const modules = require.context('./modules', true, /\.js$/),
   reg = /^\.\/(.*)\.js$/,
@@ -27,9 +27,9 @@ const Store = createContext(),
       function(key) {
         const arr = key.split('/');
         if (arr.length == 1) {
-          return state[key];
+          return $deepCopy(state[key]);
         } else {
-          return spacedState[arr[0]][arr[1]];
+          return $deepCopy(spacedState[arr[0]][arr[1]]);
         }
       },
       function(key, value) {

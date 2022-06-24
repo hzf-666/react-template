@@ -22,11 +22,11 @@ function Login() {
     })();
 
     // $http.all([
-    //   getCaptcha({ showTip: false })
+    //   getCaptcha({ message: false })
     // ], {
-    //   showTip: true,
-    //   successTip: '并行请求成功',
-    //   failTip: '并行请求失败',
+    //   message: true,
+    //   successMsg: '并行请求成功',
+    //   failMsg: '并行请求失败',
     // }).then(res => {
     //   if (res.code == 200) {
     //     console.log(res.data);

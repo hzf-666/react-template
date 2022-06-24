@@ -4,7 +4,7 @@
  * @Author: hzf
  * @Date: 2022-04-02 16:12:40
  * @LastEditors: hzf
- * @LastEditTime: 2022-04-20 12:11:19
+ * @LastEditTime: 2022-06-24 14:50:29
  */
 export function useUpdated(callback) {
   let isFirstRender = false;
@@ -22,7 +22,15 @@ export function useUpdated(callback) {
 
 export function useApiLoading(api) {
   const [loading, setLoading] = useState(false);
-  return [loading, (option) => {
-    return api({ setLoading, ...option });
+  return [loading, (...args) => {
+    let index = 0;
+    if (args.length > 1) {
+      index = args[args.length - 1];
+    }
+    args[index] = {
+      setLoading,
+      ...args[index],
+    };
+    return api(...args);
   }];
 }

@@ -4,7 +4,7 @@
  * @Author: hzf
  * @Date: 2022-03-30 11:59:23
  * @LastEditors: hzf
- * @LastEditTime: 2022-04-26 18:28:16
+ * @LastEditTime: 2022-06-24 14:46:10
 */
 const path = require('path'),
   AutoImport = require('unplugin-auto-import/webpack'),
@@ -40,6 +40,12 @@ module.exports = override(
                 };
               }
             }
+            if (name.startsWith('$use')) {
+              return {
+                from: '@/hooks',
+                name: name.replace('$', ''),
+              };
+            }
           },
         ],
       }),
@@ -50,7 +56,6 @@ module.exports = override(
     '@': resolve('src'),
     '@a': resolve('src/assets'),
     '@c': resolve('src/components'),
-    '@h': resolve('src/hooks'),
     '@p': resolve('src/plugins'),
     '@u': resolve('src/utils'),
     '@v': resolve('src/views'),

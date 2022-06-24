@@ -10,8 +10,8 @@ const baseUrl = '/api/userSystem/common';
 
 export async function getCaptcha(options = {}) { // 获取验证码
   options = {
-    successTip: '',
-    failTip: '',
+    successMsg: '',
+    failMsg: '',
     ...options,
   };
   return await $http.get(`${ baseUrl }/captcha`, options);
@@ -23,8 +23,8 @@ export async function uploadFile(options = {}) { // 上传文件
     formData.append(k, options.data[k]);
   });
   options = {
-    successTip: '',
-    failTip: '',
+    successMsg: '',
+    failMsg: '',
     headers: {
       'Content-Type': 'multipart/form-data',
     },
