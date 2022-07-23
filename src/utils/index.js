@@ -4,7 +4,7 @@
  * @Author: hzf
  * @Date: 2022-04-02 17:18:09
  * @LastEditors: hzf
- * @LastEditTime: 2022-06-24 14:50:51
+ * @LastEditTime: 2022-07-21 19:42:47
  */
 export function typeOf(target) {
   const getProtoStr = Object.prototype.toString,
@@ -23,7 +23,7 @@ export function typeOf(target) {
   return map[getProtoStr.call(target)];
 }
 
-export function deepCopy(target) {
+export function deepCopy(target) { // 数据深拷贝
   let result;
   switch (typeOf(target)) {
     case 'array':
@@ -37,7 +37,7 @@ export function deepCopy(target) {
       return result;
   }
   for (const i in target) {
-    result[i] = typeOf(target[i]) === 'object' ? deepCopy(target[i]) : target[i];
+    result[i] = typeOf(target[i]) === 'array' || typeOf(target[i]) === 'object' ? deepCopy(target[i]) : target[i];
   }
   return result;
 }
