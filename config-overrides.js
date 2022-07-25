@@ -4,7 +4,7 @@
  * @Author: hzf
  * @Date: 2022-03-30 11:59:23
  * @LastEditors: hzf
- * @LastEditTime: 2022-06-24 14:46:10
+ * @LastEditTime: 2022-07-25 16:37:25
 */
 const path = require('path'),
   AutoImport = require('unplugin-auto-import/webpack'),
@@ -71,5 +71,5 @@ module.exports = override(
         }
       });
     }
-  })
+  }),
 );

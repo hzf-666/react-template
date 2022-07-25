@@ -1,10 +1,6 @@
 $scale: 100;
 
-@function rel($number) {
-  @return $number / $scale * 1rem;
-}
+// $fontSize: 28rem;
 
-$colorText: #666;
 $fontSize: 14px;
-
-// $fontSize: rel(28);
+$colorText: #666;
